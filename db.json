@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
+      "likes": 28
     },
     {
       "id": 2,
@@ -47,6 +47,30 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "Mushroom Soup",
+      "image": "https://i.pinimg.com/originals/43/90/c9/4390c9baf96f829ecb98f98a5c54d7b7.jpg",
+      "likes": 1,
+      "id": 9
+    },
+    {
+      "name": "Pee Milkers",
+      "image": "https://carboncostume.com/wordpress/wp-content/uploads/2015/11/hackerman.jpg",
+      "likes": 1,
+      "id": 10
+    },
+    {
+      "name": "Doug Harrison",
+      "image": "https://images.halloweencostumes.com/products/29256/1-1/adult-inflatable-banana-costume.jpg",
+      "likes": 0,
+      "id": 11
+    },
+    {
+      "name": "Doug",
+      "image": "https://i.imgur.com/8KrqXXw.jpg",
+      "likes": 0,
+      "id": 12
     }
   ]
 }
