@@ -7,11 +7,14 @@ const ToyContainer = (props) => {
       {props.toys.map(toy => {
         return <ToyCard 
           key={toy.id} 
-          id={toy.id} 
+          id={toy.id}
+          index={props.toys.indexOf(toy)}
           name={toy.name} 
           image={toy.image} 
           likes={toy.likes} 
-          handleLike={props.handleLike}/>
+          handleLike={props.handleLike}
+          handleDonate={props.handleDonate}
+          />
       })}
     </div>
   );

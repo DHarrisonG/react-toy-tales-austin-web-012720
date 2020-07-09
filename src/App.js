@@ -8,7 +8,7 @@ import ToyContainer from './components/ToyContainer'
 // import data from './data'
 
 
-class App extends React.Component{
+class App extends React.Component {
 
   state = {
     display: false,
@@ -21,13 +21,13 @@ class App extends React.Component{
 
   fetchToys = () => {
     fetch("http://localhost:3000/toys")
-    .then(res => res.json())
-    .then(toys => {
-      this.setState({
-        toys: toys
+      .then(res => res.json())
+      .then(toys => {
+        this.setState({
+          toys: toys
+        })
+        console.log(this.state.toys)
       })
-      console.log(this.state.toys)
-    })
   }
 
   handleClick = () => {
@@ -55,20 +55,34 @@ class App extends React.Component{
 
   }
 
-  render(){
+  handleDonate = (id, index) => {
+    console.log("Donate")
+    console.log(index)
+    // let test = this.state.toys.find(toy => toy.id === id)
+    // console.log(test)
+    this.setState((prevState) => ({
+      toys: prevState.toys.filter((_, i) => i !== index)
+    }));
+  }
+
+  render() {
     return (
       <>
-        <Header/>
-        { this.state.display
-            ?
-          <ToyForm/>
-            :
+        <Header />
+        {this.state.display
+          ?
+          <ToyForm />
+          :
           null
         }
         <div className="buttonContainer">
           <button onClick={this.handleClick}> Add a Toy </button>
         </div>
-        <ToyContainer toys={this.state.toys} handleLike={this.handleLike}/>
+        <ToyContainer
+          toys={this.state.toys} 
+          handleLike={this.handleLike} 
+          handleDonate={this.handleDonate}
+          />
       </>
     );
   }
