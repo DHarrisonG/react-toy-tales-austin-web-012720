@@ -56,22 +56,42 @@ class App extends React.Component {
   }
 
   handleDonate = (id, index) => {
-    console.log("Donate")
-    console.log(index)
-    // let test = this.state.toys.find(toy => toy.id === id)
-    // console.log(test)
+    window.alert("sometext");
     this.setState((prevState) => ({
       toys: prevState.toys.filter((_, i) => i !== index)
     }));
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault()
+    fetch("http://localhost:3000/toys", {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: e.target.name.value,
+        image: e.target.image.value,
+        likes: 0
+      })
+    })
+    .then(res =>{
+      this.fetchToys()
+      this.setState({
+        display: false
+      })
+    })
+
+  }
+r
   render() {
     return (
       <>
-        <Header />
+        <Header/>
         {this.state.display
           ?
-          <ToyForm />
+          <ToyForm handleSubmit={this.handleSubmit} />
           :
           null
         }
